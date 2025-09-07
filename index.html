@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You ❤️</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+<h1>Will you marry me? 💍</h1>
+<div class="buttons">
+<button id="yesBtn">Yes 💖</button>
+<button id="noBtn">No 🙈</button>
+</div>
+<p id="loveMessage" class="hidden">
+I knew you'd say YES! my love🥰<br>
+You are the love of my life, my happiness, my everything. nakupenda tuu sana.❤️<br>
+Every moment with you is precious, and I can’t wait to spend forever by your side.
+babe any choose kila saa asigive on me 
+</p>
+</div>
+
+
+<script>
+const yesBtn = document.getElementById('yesBtn');
+const noBtn = document.getElementById('noBtn');
+const loveMessage = document.getElementById('loveMessage');
+
+
+// Show love message when Yes is clicked
+yesBtn.addEventListener('click', () => {
+loveMessage.classList.remove('hidden');
+loveMessage.classList.add('show');
+});
+
+
+// Make No button run away
+noBtn.addEventListener('mouseover', () => {
+const container = document.querySelector('.container');
+const containerRect = container.getBoundingClientRect();
+const btnRect = noBtn.getBoundingClientRect();
+
+
+const offsetX = Math.random() * (containerRect.width - btnRect.width);
+const offsetY = Math.random() * (containerRect.height - btnRect.height);
+
+
+noBtn.style.position = 'absolute';
+noBtn.style.left = offsetX + 'px';
+noBtn.style.top = offsetY + 'px';
+});
+</script>
+</body>
+</html>
